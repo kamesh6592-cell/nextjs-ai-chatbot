@@ -7,9 +7,35 @@ import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chat.vercel.ai"),
-  title: "Next.js Chatbot Template",
-  description: "Next.js chatbot template using the AI SDK.",
+  metadataBase: new URL("https://chat.ajstudioz.com"),
+  title: "AJ STUDIOZ CHAT - Powered by DeepSeek AI",
+  description: "Experience the power of AI with DeepSeek - Choose from V3 and R1 reasoning models for your conversations",
+  openGraph: {
+    title: "AJ STUDIOZ CHAT - Powered by DeepSeek AI",
+    description: "Experience the power of AI with DeepSeek - Choose from V3 and R1 reasoning models for your conversations",
+    siteName: "AJ STUDIOZ CHAT",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AJ STUDIOZ CHAT - AI Assistant",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AJ STUDIOZ CHAT - Powered by DeepSeek AI",
+    description: "Experience the power of AI with DeepSeek - Choose from V3 and R1 reasoning models for your conversations",
+    images: ["/logo.jpg"],
+    creator: "@ajstudioz",
+  },
+  // Additional meta tags for better social media sharing
+  other: {
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/jpeg",
+  },
 };
 
 export const viewport = {

@@ -33,7 +33,7 @@ export const myProvider = isTestEnvironment
       languageModels: {
         "chat-model": openrouter("deepseek/deepseek-chat"),
         "chat-model-reasoning": wrapLanguageModel({
-          model: openrouter("deepseek/deepseek-r1"),
+          model: openrouter("deepseek/deepseek-reasoner"),
           middleware: extractReasoningMiddleware({ tagName: "think" }),
         }),
         "title-model": openrouter("deepseek/deepseek-chat"),

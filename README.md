@@ -1,14 +1,13 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Chat SDK</h1>
+<a href="https://chat.ajstudioz.com">
+  <img alt="AJ STUDIOZ Chat powered by DeepSeek AI." src="app/(chat)/opengraph-image.png">
+  <h1 align="center">AJ STUDIOZ CHAT</h1>
 </a>
 
 <p align="center">
-    Chat SDK is a free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.
+    AJ STUDIOZ CHAT is a powerful AI chatbot built with Next.js and the AI SDK, featuring DeepSeek reasoning models for advanced conversations.
 </p>
 
 <p align="center">
-  <a href="https://chat-sdk.dev"><strong>Read Docs</strong></a> ·
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#model-providers"><strong>Model Providers</strong></a> ·
   <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
