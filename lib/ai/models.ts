@@ -14,8 +14,8 @@ export const chatModels: ChatModel[] = [
   },
   {
     id: "chat-model-reasoning",
-    name: "DeepSeek R1",
+    name: "DeepSeek R1 (Reasoning)",
     description:
-      "Uses advanced chain-of-thought reasoning for complex problems",
+      "Advanced reasoning model that shows step-by-step thinking process",
   },
 ];

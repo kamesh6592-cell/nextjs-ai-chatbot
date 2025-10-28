@@ -1,4 +1,5 @@
 import { createOpenAI } from "@ai-sdk/openai";
+import { createGroq } from "@ai-sdk/groq";
 import {
   customProvider,
   extractReasoningMiddleware,
@@ -10,6 +11,17 @@ import { isTestEnvironment } from "../constants";
 const openrouter = createOpenAI({
   apiKey: process.env.DEEPSEEK_API_KEY, // Using your OpenRouter API key
   baseURL: 'https://openrouter.ai/api/v1',
+});
+
+// Groq provider for DeepSeek R1 reasoning model
+const groq = createGroq({
+  apiKey: process.env.GROQ_API_KEY || process.env.DEEPSEEK_API_KEY, // Add your Groq API key or use fallback
+});
+
+// OpenAI provider for reasoning models
+const openai = createOpenAI({
+  apiKey: process.env.OPENAI_API_KEY || process.env.DEEPSEEK_API_KEY, // Fallback to same key if OpenAI not set
+  baseURL: process.env.OPENAI_API_KEY ? 'https://api.openai.com/v1' : 'https://openrouter.ai/api/v1',
 });
 
 export const myProvider = isTestEnvironment
@@ -33,7 +45,7 @@ export const myProvider = isTestEnvironment
       languageModels: {
         "chat-model": openrouter("deepseek/deepseek-chat"),
         "chat-model-reasoning": wrapLanguageModel({
-          model: openrouter("deepseek/deepseek-r1-0528-qwen3-8b:free"),
+          model: groq("deepseek-r1-distill-llama-70b"),
           middleware: extractReasoningMiddleware({ tagName: "think" }),
         }),
         "title-model": openrouter("deepseek/deepseek-chat"),
