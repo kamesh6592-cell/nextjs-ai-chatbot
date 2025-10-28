@@ -36,14 +36,14 @@
 
 ## Model Providers
 
-This template uses [DeepSeek](https://platform.deepseek.com/) for advanced AI capabilities, including reasoning models with visible thought processes. The configuration includes:
+This template uses [OpenRouter](https://openrouter.ai/) to access DeepSeek models for advanced AI capabilities, including reasoning models with visible thought processes. The configuration includes:
 
-- **DeepSeek V3** (`deepseek-chat`) - Advanced general-purpose model
-- **DeepSeek R1** (`deepseek-reasoner`) - Reasoning model with chain-of-thought capabilities
+- **DeepSeek V3** (`deepseek/deepseek-chat`) - Advanced general-purpose model
+- **DeepSeek R1** (`deepseek/deepseek-r1`) - Reasoning model with chain-of-thought capabilities
 
-### DeepSeek Authentication
+### OpenRouter Authentication
 
-You need to provide a DeepSeek API key by setting the `DEEPSEEK_API_KEY` environment variable in your `.env.local` file. Get your API key from [DeepSeek Platform](https://platform.deepseek.com/api_keys).
+You need to provide an OpenRouter API key by setting the `DEEPSEEK_API_KEY` environment variable in your `.env.local` file. Get your API key from [OpenRouter](https://openrouter.ai/keys).
 
 With the [AI SDK](https://ai-sdk.dev/docs/introduction), you can also switch to other direct LLM providers like [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://ai-sdk.dev/providers/ai-sdk-providers) with just a few lines of code.
 

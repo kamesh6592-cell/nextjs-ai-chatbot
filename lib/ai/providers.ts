@@ -1,10 +1,16 @@
-import { deepseek } from "@ai-sdk/deepseek";
+import { createOpenAI } from "@ai-sdk/openai";
 import {
   customProvider,
   extractReasoningMiddleware,
   wrapLanguageModel,
 } from "ai";
 import { isTestEnvironment } from "../constants";
+
+// OpenRouter provider for DeepSeek models
+const openrouter = createOpenAI({
+  apiKey: process.env.DEEPSEEK_API_KEY, // Using your OpenRouter API key
+  baseURL: 'https://openrouter.ai/api/v1',
+});
 
 export const myProvider = isTestEnvironment
   ? (() => {
@@ -25,12 +31,12 @@ export const myProvider = isTestEnvironment
     })()
   : customProvider({
       languageModels: {
-        "chat-model": deepseek("deepseek-chat"),
+        "chat-model": openrouter("deepseek/deepseek-chat"),
         "chat-model-reasoning": wrapLanguageModel({
-          model: deepseek("deepseek-reasoner"),
+          model: openrouter("deepseek/deepseek-r1"),
           middleware: extractReasoningMiddleware({ tagName: "think" }),
         }),
-        "title-model": deepseek("deepseek-chat"),
-        "artifact-model": deepseek("deepseek-chat"),
+        "title-model": openrouter("deepseek/deepseek-chat"),
+        "artifact-model": openrouter("deepseek/deepseek-chat"),
       },
     });
